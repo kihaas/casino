@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Casino</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">CASINO</div>
+        <nav class="main-nav">
+            <a href="/" class="nav-link">Games</a>
+            <a href="/promotions" class="nav-link">Promotions</a>
+            <a href="/support" class="nav-link">Support</a>
+        </nav>
+        <div class="auth-section">
+            <div class="balance-display">
+                <span class="balance-icon">💰</span>
+                <span id="header-balance">$0.00</span>
+            </div>
+            <div class="profile-dropdown">
+                <button class="profile-btn">
+                    <span class="profile-icon">👤</span>
+                    <span id="header-username">Username</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="#" id="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar">👤</div>
+                <h1 id="profile-username">Username</h1>
+                <p id="profile-email">user@example.com</p>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="total-wins">0</span>
+                    <span class="stat-label">Total Wins</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="total-bets">0</span>
+                    <span class="stat-label">Total Bets</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="win-rate">0%</span>
+                    <span class="stat-label">Win Rate</span>
+                </div>
+            </div>
+
+            <div class="balance-section">
+                <h2>Your Balance</h2>
+                <div class="balance-amount" id="profile-balance">$0.00</div>
+
+                <div class="balance-actions">
+                    <button class="action-btn deposit" id="deposit-btn">Deposit</button>
+                    <button class="action-btn withdraw" id="withdraw-btn">Withdraw</button>
+                </div>
+
+                <div class="amount-input" id="amount-input">
+                    <input type="number" id="transaction-amount" placeholder="Amount">
+                    <button class="confirm-btn" id="confirm-transaction">Confirm</button>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <div class="section-header">
+                    <h2>Game History</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="games">Games</button>
+                        <button class="tab-btn" data-tab="transactions">Transactions</button>
+                    </div>
+                </div>
+
+                <div class="tab-content active" id="games-tab">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Game</th>
+                                <th>Bet</th>
+                                <th>Result</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="games-history">
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="transactions-tab">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-history">
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>

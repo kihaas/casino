@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roulette</title>
+    <link rel="stylesheet" href="/static/css/roulette.css">
+</head>
+<body>
+    <div class="roulette-container">
+        <h1>Roulette Game</h1>
+        <div class="balance">Balance: <span id="balance">0</span></div>
+
+        <div class="roulette-wheel">
+            <div class="wheel">
+                <div class="wheel-center"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <input type="number" id="betAmount" placeholder="Bet amount" min="1">
+            <button id="spinBtn" class="spin-btn">Spin</button>
+        </div>
+
+        <div class="result" id="result"></div>
+        <div class="history" id="history"></div>
+
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+
+    <script src="/static/js/roulette.js"></script>
+</body>
+</html>

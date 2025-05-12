@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino | Roulette</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="logo">CASINO</div>
+        <nav class="main-nav">
+            <a href="/" class="nav-link active">Games</a>
+            <a href="/promotions" class="nav-link">Promotions</a>
+            <a href="/support" class="nav-link">Support</a>
+        </nav>
+        <div class="auth-section">
+            <div class="balance-display">
+                <span class="balance-icon">💰</span>
+                <span id="header-balance">$0.00</span>
+            </div>
+            <div class="auth-buttons" id="auth-buttons">
+            <a href="/api/auth/login" class="login-btn">Login</a>
+            <a href="/api/auth/register" class="register-btn">Register</a>
+            </div>
+            <div class="profile-dropdown">
+                <button class="profile-btn">
+                    <span class="profile-icon">👤</span>
+                    <span id="header-username">Guest</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="#" id="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <!-- Game Container -->
+        <div class="game-container">
+            <div class="game-header">
+                <h1>Roulette</h1>
+                <div class="balance-display">
+                    Balance: <span id="balance">0.00</span>
+                </div>
+            </div>
+
+            <!-- Roulette Wheel -->
+<div class="roulette-container">
+    <div class="roulette-wheel" id="roulette-wheel"></div>
+
+    <!-- Bet Controls -->
+    <div class="bet-controls">
+        <div class="bet-amount">
+            <input type="number" id="bet-amount" placeholder="Enter bet amount" min="1">
+            <button id="spin-btn">SPIN</button>
+        </div>
+        <div class="quick-bets">
+            <button class="quick-bet" data-amount="10">$10</button>
+            <button class="quick-bet" data-amount="50">$50</button>
+            <button class="quick-bet" data-amount="100">$100</button>
+            <button class="quick-bet" data-amount="500">$500</button>
+        </div>
+    </div>
+
+    <!-- Result Display -->
+    <div class="result-display">
+        <div class="result" id="result">Place your bet!</div>
+    </div>
+</div>
+
+
+
+            <!-- History -->
+            <div class="history-section">
+                <h3>Last Numbers:</h3>
+                <div class="history-list" id="history-list"></div>
+            </div>
+        </div>
+
+        <!-- Betting Table (would be implemented later) -->
+        <div class="betting-table">
+            <!-- Betting options would go here -->
+        </div>
+    </main>
+
+    <!-- Alert Container -->
+    <div id="alert-container"></div>
+
+    <script src="/static/js/roulette.js"></script>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

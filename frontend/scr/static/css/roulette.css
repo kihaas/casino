@@ -1,0 +1,98 @@
+.roulette-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.roulette-wheel {
+    margin: 30px auto;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #0a5c36;
+    position: relative;
+    border: 5px solid #333;
+    transition: transform 3s ease-out;
+}
+
+.wheel-center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+#betAmount {
+    padding: 10px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.spin-btn {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.spin-btn:hover {
+    background: #0056b3;
+}
+
+.result {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.result.win {
+    background: #d4edda;
+    color: #155724;
+}
+
+.result.lose {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.history {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.history li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
