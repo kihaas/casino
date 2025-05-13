@@ -26,42 +26,42 @@ def logout():
 
 
 # API для логина
-@auth_bp.route('/api/auth/login', methods=['POST'])
-def api_login():
-    email = request.json.get('email')
-    password = request.json.get('password')
-
-    user = User.query.filter_by(email=email).first()
-
-    if user and user.check_password(password):
-        access_token = create_access_token(identity=user.id)
-        return jsonify(access_token=access_token), 200
-
-    return jsonify({"error": "Invalid credentials"}), 401
-
-
-# API для регистрации
-@auth_bp.route('/api/auth/register', methods=['POST'])
-def api_register():
-    username = request.json.get('username')
-    email = request.json.get('email')
-    password = request.json.get('password')
-
-    if User.query.filter_by(username=username).first():
-        return jsonify({"error": "Username already exists"}), 400
-
-    if User.query.filter_by(email=email).first():
-        return jsonify({"error": "Email already exists"}), 400
-
-    hashed_pw = generate_password_hash(password)
-
-    new_user = User(
-        username=username,
-        email=email,
-        password_hash=hashed_pw
-    )
-
-    db.session.add(new_user)
-    db.session.commit()
-
-    return jsonify({"message": "User created successfully"}), 201
+# @auth_bp.route('/api/auth/login', methods=['POST'])
+# def api_login():
+#     email = request.json.get('email')
+#     password = request.json.get('password')
+#
+#     user = User.query.filter_by(email=email).first()
+#
+#     if user and user.check_password(password):
+#         access_token = create_access_token(identity=user.id)
+#         return jsonify(access_token=access_token), 200
+#
+#     return jsonify({"error": "Invalid credentials"}), 401
+#
+#
+# # API для регистрации
+# @auth_bp.route('/api/auth/register', methods=['POST'])
+# def api_register():
+#     username = request.json.get('username')
+#     email = request.json.get('email')
+#     password = request.json.get('password')
+#
+#     if User.query.filter_by(username=username).first():
+#         return jsonify({"error": "Username already exists"}), 400
+#
+#     if User.query.filter_by(email=email).first():
+#         return jsonify({"error": "Email already exists"}), 400
+#
+#     hashed_pw = generate_password_hash(password)
+#
+#     new_user = User(
+#         username=username,
+#         email=email,
+#         password_hash=hashed_pw
+#     )
+#
+#     db.session.add(new_user)
+#     db.session.commit()
+#
+#     # return jsonify({"message": "User created successfully"}), 201
